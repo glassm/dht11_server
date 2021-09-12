@@ -10,7 +10,7 @@ Springboot REST on RPi serving data from DHT11 temperature/humidity sensor on Pi
 * mvn clean install
 ### Launch
 * on command line in terminal at project root 'java -jar dht11_server.jar'
-* GET http://*\<host\>*:8080/dht/dht11
+* GET http://*\<host\>*:8080/ts/sensors/dht11
 ### Reference Documentation
 
 For further reference, please consider the following sections:

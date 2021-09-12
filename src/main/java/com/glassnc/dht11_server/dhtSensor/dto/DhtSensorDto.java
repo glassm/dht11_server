@@ -7,6 +7,7 @@ public class DhtSensorDto {
     private int tempC;
     private int tempF;
     private int relativeHumidity;
+    private int dewpoint;
     private LocalDateTime timestamp;
 
     public int getTempC() {
@@ -41,12 +42,21 @@ public class DhtSensorDto {
         this.timestamp = timestamp;
     }
 
+    public int getDewpoint() {
+        return dewpoint;
+    }
+
+    public void setDewpoint(int dewpoint) {
+        this.dewpoint = dewpoint;
+    }
+
     @Override
     public String toString() {
         return "DhtSensorDto{" +
                 "tempC=" + tempC +
                 ", tempF=" + tempF +
                 ", relativeHumidity=" + relativeHumidity +
+                ", dewpoint=" + dewpoint +
                 ", timestamp=" + timestamp +
                 '}';
     }

@@ -29,10 +29,16 @@ public class SensorController {
             System.out.println("dht 11 read result: " + result);
 
             if (result.isValid()) {
+                double relativeHumidity = result.getHumidity();
+                double tempC = result.getTemperature();
+                double tempF = tempC * 9/5 + 32;
+                double dewpointC = (tempC - (14.55 + 0.114 * tempC) * (1 - (0.01 * relativeHumidity)) - Math.pow(((2.5 + 0.007 * tempC) * (1 - (0.01 * relativeHumidity))),3) - (15.9 + 0.117 * tempC) * Math.pow((1 - (0.01 * relativeHumidity)), 14));
+                double dewpointF = dewpointC * 9/5 + 32;
                 dto.setTimestamp(LocalDateTime.now());
-                dto.setRelativeHumidity(Double.valueOf(result.getHumidity()).intValue());
-                dto.setTempC(Double.valueOf(result.getTemperature()).intValue());
-                dto.setTempF(Double.valueOf(result.getTemperature()).intValue() * 9/5 + 32);
+                dto.setRelativeHumidity(Double.valueOf(relativeHumidity).intValue());
+                dto.setTempC(Double.valueOf(tempC).intValue());
+                dto.setTempF(Double.valueOf(tempF).intValue());
+                dto.setDewpoint(Double.valueOf(dewpointF).intValue());
                 completed = true;
             }
 
