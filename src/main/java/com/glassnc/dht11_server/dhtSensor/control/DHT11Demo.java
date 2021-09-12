@@ -5,7 +5,9 @@ import java.util.concurrent.TimeUnit;
 
 public class DHT11Demo {
     public static void main(String[] args) throws InterruptedException {
-        DHT11 dht11 = new DHT11(15); // use GPIO pin 15
+        //Pi4J implements the same pin number scheme as the Wiring Pi project.
+        //https://pi4j.com/1.2/usage.html
+        DHT11 dht11 = new DHT11(0); // use GPIO pin 17 according to wiringplan
 
         while (true) {
             DHT11Result result = dht11.read();

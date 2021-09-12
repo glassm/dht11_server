@@ -2,13 +2,14 @@
 
 ### Goal
 * Gather data from DHT11 Temperature/Humidity sensor
-* Make the data available through a REST api (http://<host>:8080/dht/dht11)
+* Make the data available through a REST api
 
 ### Installation
 * Uses Java JDK11
 * mvn clean install
 ### Launch
 * on command line in terminal at project root 'java -jar dht11_server.jar'
+* GET http://*\<host\>*:8080/dht/dht11
 
 ### Reference Documentation
 
